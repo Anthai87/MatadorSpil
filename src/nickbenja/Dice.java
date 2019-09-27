@@ -14,5 +14,7 @@ public class Dice {
             count++;
         }
 
+        //hej
+
     }
 }
