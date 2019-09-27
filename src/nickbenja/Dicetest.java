@@ -12,7 +12,5 @@ public class Dicetest {
             count++;
         }
 
-        //hej
-
     }
 }
