@@ -2,8 +2,8 @@ package AnthOgAnt;
 
 public class Player {
     private String name;
-    private int score = 0;
-    private boolean playerturn = false;
+    private int score;
+    private boolean playerturn;
 
     public Player(String name, int score, boolean playerturn) {
         this.name = name;

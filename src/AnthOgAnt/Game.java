@@ -32,10 +32,10 @@ public class Game {
             System.out.println("Player 2 score :" + player2.getScore());
         }
         if (player1.getScore() > player2.getScore()){
-            System.out.println("Player 1 wins with " + player1.getScore() + " points.");
+            System.out.println(player1.getName() + " wins with " + player1.getScore() + " points.");
         }
         else {
-            System.out.println("Player 2 wins with " + player2.getScore() + " points.");
+            System.out.println(player2.getName() + " wins with " + player2.getScore() + " points.");
         }
     }
 

@@ -5,5 +5,6 @@ public class Hejmeddig {
 
 
         System.out.println("hej");
+        System.out.println((Math.random()*6)+1);
     }
 }
