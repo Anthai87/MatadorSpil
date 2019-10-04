@@ -19,10 +19,10 @@ public class Game {
         while (vind == false) {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Tryk enter for at slå for Player1");
+            System.out.println("Tryk enter for at slå for " + player1.getName());
             scanner.nextLine();
             playerTurn(player1);
-            System.out.println("Tryk enter for at slå for Player2");
+            System.out.println("Tryk enter for at slå for " + player2.getName());
             scanner.nextLine();
             playerTurn(player2);
             System.out.println(player1.getName() + " score: " + player1.getScore());
