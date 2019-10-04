@@ -13,7 +13,7 @@ public class Main {
         Player player1 = new Player(player1Name, 0, false);
         Player player2 = new Player(player2Name, 0, false);
         Dice dice = new Dice(0);
-        Game game = new Game(player1,player2,dice1);
+        Game game = new Game(player1,player2,dice);
         game.StartGame();
     }
 }
