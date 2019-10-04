@@ -19,8 +19,6 @@ public class Game {
         while (vind == false) {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Hvis der opstår problemer kontant supportHUB.com");
-            System.out.println("");
             System.out.println("Tryk enter for at slå for Player1");
             scanner.nextLine();
             playerTurn(player1);
