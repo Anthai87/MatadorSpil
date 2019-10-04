@@ -8,6 +8,7 @@ public class Game {
     int value2;
     boolean vind = false;
 
+
     public Game(Player player1, Player player2, Dice dice1) {
         this.player1 = player1;
         this.player2 = player2;
@@ -18,6 +19,8 @@ public class Game {
         while (vind == false) {
 
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Hvis der opstår problemer kontant supportHUB.com");
+            System.out.println("");
             System.out.println("Tryk enter for at slå for Player1");
             scanner.nextLine();
             playerTurn(player1);
