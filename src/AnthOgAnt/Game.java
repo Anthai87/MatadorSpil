@@ -22,14 +22,14 @@ public class Game {
             System.out.println("Tryk enter for at slå for Player2");
             scanner.nextLine();
             playerTurn(player2);
-            System.out.println(player1.getName() + " score : " + player1.getScore());
-            System.out.println(player2.getName() + " score :" + player2.getScore());
+            System.out.println(player1.getName() + " score: " + player1.getScore());
+            System.out.println(player2.getName() + " score: " + player2.getScore());
         }
         if (player1.getScore() > player2.getScore()){
-            System.out.println(player1.getName() + " wins with " + player1.getScore() + " points.");
+            System.out.println(player1.getName() + " vinder med " + player1.getScore() + " point.");
         }
         else {
-            System.out.println(player2.getName() + " wins with " + player2.getScore() + " points.");
+            System.out.println(player2.getName() + " vinder med " + player2.getScore() + " point.");
         }
     }
 
@@ -50,7 +50,6 @@ public class Game {
             value2 = dice.roll();
             player.setScore(player.getScore() + value1 + value2);
             System.out.println("Ekstra slag gav " + value1 +" og " + value2);
-            System.out.println(player.getName() + " har nu " + player.getScore() + " point.");
         }
     }
 
