@@ -1,5 +1,7 @@
 package AnthOgAnt;
 
+import java.util.Scanner;
+
 public class Game {
     private Player player1;
     private Player player2;
@@ -13,7 +15,12 @@ public class Game {
 
     public void StartGame() {
         while ((player1.getScore() < 40) && (player2.getScore() < 40)) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Tryk enter for at slå for Player1");
+            scanner.nextLine();
             playerTurn(player1);
+            System.out.println("Tryk enter for at slå for Player2");
+            scanner.nextLine();
             playerTurn(player2);
             System.out.println(player1.getName() + " score : " + player1.getScore());
             System.out.println(player2.getName() + " score :" + player2.getScore());
