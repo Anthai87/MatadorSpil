@@ -1,12 +1,12 @@
 public class Player {
     private String name;
     private int score;
-    private boolean playerturn;
+    private boolean winner;
 
-    public Player(String name, int score, boolean playerturn) {
+    public Player(String name, int score, boolean winner) {
         this.name = name;
         this.score = score;
-        this.playerturn = playerturn;
+        this.winner = winner;
     }
 
     public String getName() {
@@ -25,11 +25,11 @@ public class Player {
         this.score = score;
     }
 
-    public boolean isPlayerturn() {
-        return playerturn;
+    public boolean isWinner() {
+        return winner;
     }
 
-    public void setPlayerturn(boolean playerturn) {
-        this.playerturn = playerturn;
+    public void setWinner(boolean winner) {
+        this.winner = winner;
     }
 }

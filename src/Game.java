@@ -4,6 +4,10 @@ public class Game {
     private Player player1;
     private Player player2;
     private Dice dice;
+    int value1;
+    int value2;
+    boolean vind = false;
+
 
     public Game(Player player1, Player player2, Dice dice1) {
         this.player1 = player1;
@@ -12,7 +16,8 @@ public class Game {
     }
 
     public void StartGame() {
-        while ((player1.getScore() < 40) && (player2.getScore() < 40)) {
+        while (vind == false) {
+
             Scanner scanner = new Scanner(System.in);
             System.out.println("Tryk enter for at slå for Player1");
             scanner.nextLine();
@@ -23,17 +28,17 @@ public class Game {
             System.out.println(player1.getName() + " score: " + player1.getScore());
             System.out.println(player2.getName() + " score: " + player2.getScore());
         }
-        if (player1.getScore() > player2.getScore()){
+        if (player1.isWinner() ) {
             System.out.println(player1.getName() + " vinder med " + player1.getScore() + " point.");
         }
-        else {
+        else if (player2.isWinner()){
             System.out.println(player2.getName() + " vinder med " + player2.getScore() + " point.");
         }
-    }
+        }
+
 
     private void playerTurn(Player player) {
-        int value1;
-        int value2;
+
         value1 = dice.roll();
         value2 = dice.roll();
         player.setScore(player.getScore() + value1);
@@ -43,11 +48,15 @@ public class Game {
         if (value1 == 1 && value2 == 1) {
             player.setScore(0);
             System.out.println("Ærgerligt, score nulstillet.");
-        } else if (value1 == value2) {
+        } else if (value1 == value2 && player.getScore() < 40) {
             value1 = dice.roll();
             value2 = dice.roll();
             player.setScore(player.getScore() + value1 + value2);
             System.out.println("Ekstra slag gav " + value1 +" og " + value2);
+        }
+        if (player.getScore() >= 40 && value1 == value2){
+            vind = true;
+            player.setWinner(true);
         }
     }
 
