@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class Game {
     private Player player1;
     private Player player2;
-    private Dice dice;
-    int value1;
-    int value2;
-    boolean vind = false;
+    private Dice dice1;
+    private Dice dice2;
+    private boolean vind = false;
 
 
-    public Game(Player player1, Player player2, Dice dice1) {
+    public Game(Player player1, Player player2, Dice dice1, Dice dice2) {
         this.player1 = player1;
         this.player2 = player2;
-        this.dice = dice1;
+        this.dice1 = dice1;
+        this.dice2 = dice2;
+
     }
 
     public void StartGame() {
         while (vind == false) {
-
             Scanner scanner = new Scanner(System.in);
             System.out.println("Tryk enter for at slå for " + player1.getName());
             scanner.nextLine();
@@ -38,23 +38,22 @@ public class Game {
 
 
     private void playerTurn(Player player) {
-
-        value1 = dice.roll();
-        value2 = dice.roll();
-        player.setScore(player.getScore() + value1);
-        System.out.println(player.getName() + " slår med første terning = " + value1);
-        player.setScore(player.getScore() + value2);
-        System.out.println(player.getName() + " slår med anden terning = " + value2);
-        if (value1 == 1 && value2 == 1) {
+        dice1.roll();
+        dice2.roll();
+        player.setScore(player.getScore() + dice1.getFaceValue());
+        System.out.println(player.getName() + " slår med første terning = " + dice1.getFaceValue());
+        player.setScore(player.getScore() + dice2.getFaceValue());
+        System.out.println(player.getName() + " slår med anden terning = " + dice2.getFaceValue());
+        if (dice1.getFaceValue() == 1 && dice2.getFaceValue() == 1) {
             player.setScore(0);
             System.out.println("Ærgerligt, score nulstillet.");
-        } else if (value1 == value2 && player.getScore() < 40) {
-            value1 = dice.roll();
-            value2 = dice.roll();
-            player.setScore(player.getScore() + value1 + value2);
-            System.out.println("Ekstra slag gav " + value1 +" og " + value2);
+        } else if (dice1.getFaceValue() == dice2.getFaceValue() && player.getScore() < 40) {
+            dice1.roll();
+            dice1.roll();
+            player.setScore(player.getScore() + dice1.getFaceValue() + dice2.getFaceValue());
+            System.out.println("Ekstra slag gav " + dice1.getFaceValue() +" og " + dice2.getFaceValue());
         }
-        if (player.getScore() >= 40 && value1 == value2){
+        if (player.getScore() >= 40 && dice1.getFaceValue() == dice2.getFaceValue()){
             vind = true;
             player.setWinner(true);
         }

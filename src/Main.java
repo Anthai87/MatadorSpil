@@ -10,8 +10,9 @@ public class Main {
         String player2Name = scanner.nextLine();
         Player player1 = new Player(player1Name, 0, false);
         Player player2 = new Player(player2Name, 0, false);
-        Dice dice = new Dice(0);
-        Game game = new Game(player1,player2,dice);
+        Dice dice1 = new Dice(0);
+        Dice dice2 = new Dice(0);
+        Game game = new Game(player1,player2,dice1,dice2);
         game.StartGame();
     }
 }
